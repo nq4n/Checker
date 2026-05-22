@@ -1,0 +1,16 @@
+name: Ping Render Site
+
+on:
+  schedule:
+    - cron: "0 * * * *"
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Ping website
+        run: |
+          curl -L --max-time 60 https://muaiyad.onrender.com/
+          echo "Website pinged"
